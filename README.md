@@ -154,7 +154,7 @@ To see the changes from release to release please look at the [ChangeLog](https:
 
 ## Known Issues
 
-See [http://github.com/cheezy/fig_magic/issues](http://github.com/tk8817/fig_magic/issues)
+See [http://github.com/tk8817/fig_magic/issues](http://github.com/tk8817/fig_magic/issues)
 
 ## Contributing
 
