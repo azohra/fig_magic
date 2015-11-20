@@ -1,8 +1,8 @@
 require File.dirname(__FILE__) + "/missing"
 
-module FigNewton
+module FigMagic
   class Node
-    include FigNewton::Missing
+    include FigMagic::Missing
 
     def initialize(yml)
       @yml = yml
