@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.license       = 'MIT'
   gem.homepage      = "http://github.com/tk8817/fig_magic"
   gem.summary       = %q{Combines FigNewton & DataMagic into a single gem & namespace}
-  gem.description   = %q{Provides datasets to application stored in YAML files}
+  gem.description   = %q{Combines FigNewton & DataMagic into a single gem & namespace}
   
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
