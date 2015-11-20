@@ -1,8 +1,8 @@
 # fig_magic
 
-Jeff Morgan (@cheezy) made 2 very awesome gems called DataMagic & FigNewtown. I love them both, but I feel dirty having to do 2 initializations in my projects. initializing both for the same location & file. hate having to initialize 
-By combining the 2 gems into a single package, you can have all the functions of each gem, but only one file page set + file load. Moreover, you can use a single namespace for
-both direct hash calls & hash of hashes calls. 
+Jeff Morgan made 2 very awesome gems called DataMagic & FigNewtown. I love them both, but I feel dirty having to do 2 initializations in my projects.
+By combining the 2 gems into a single package, you can have all the functions of each gem, but only one dir set + file load.
+Moreover, you can use a single namespace for both direct hash calls & hash of hashes calls. 
 
 ## Using
 
