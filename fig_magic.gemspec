@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Justin Commu"]
   gem.email         = ["jcommu@gmail.com"]
   gem.license       = 'MIT'
-  gem.homepage      = "http://github.com/dingokiller/fig_magic"
+  gem.homepage      = "http://github.com/tk8817/fig_magic"
   gem.summary       = %q{Combines FigNewton & DataMagic into a single gem & namespace}
   gem.description   = %q{Provides datasets to application stored in YAML files}
   

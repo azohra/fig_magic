@@ -1,9 +1,8 @@
 # fig_magic
 
-[![Build Status](http://travis-ci.org/cheezy/fig_magic.png)](http://travis-ci.org/cheezy/fig_magic)
-
-An easy to use gem that provides datasets that can be used by your application
-and tests.  The data is stored in yaml files.
+Jeff Morgan (@cheezy) made 2 very awesome gems called DataMagic & FigNewtown. I love them both, but I feel dirty having to do 2 initializations in my projects. initializing both for the same location & file. hate having to initialize 
+By combining the 2 gems into a single package, you can have all the functions of each gem, but only one file page set + file load. Moreover, you can use a single namespace for
+both direct hash calls & hash of hashes calls. 
 
 ## Using
 
@@ -13,7 +12,7 @@ In order to use _fig_magic_ you will have to inform the gem where it can find th
 FigMagic.yml_directory = 'data/yml'
 ````
 
-If you do not specify a directory the gem will default to using a directory named _config/data_. 
+If you do not specify a directory the gem will default to using a directory named _config/. 
 
 After setting the directory you must load a file.  This can be accomplished by calling the _load_ method.
 
@@ -23,9 +22,36 @@ FigMagic.load 'filename.yml'
 
 If you do not specify a filename the gem will attempt to use a file named _default.yml_.  If you are using this for testing you will more than likely want to call load before each test to load the proper data for the specific test, or use the namespaced keys method, detailed below.
 
-Another option is to set an environment variable DATA_MAGIC_FILE.  When this is set it will be used instead of the _default.yml_ file.
+Another option is to set an environment variable FIG_MAGIC_FILE.  When this is set it will be used instead of the _default.yml_ file.
 
-The final thing to do is use the data.  The gem has a `data_for` method that will return the data for a specific key.  The most common way to use this is to include the _FigMagic_ module in a [page-object](https://github.com/cheezy/page-object) and then populate a page with the data.  Here's an example:
+
+Next we simply begin calling methods on the FigMagic module that match our keys.  Let's assume the system_test.yml file contains the following entries:
+
+    base_url:  http://system_test.mycompany.com
+    database_user: cheezy
+    database_password: secret
+
+
+In our code we can call methods that match the keys.  Here is an example PageObject where we are using the `base_url` entry:
+
+````ruby
+class MyPage
+  include PageObject
+  
+  page_url "#{FigMagic.base_url}/my_page.html"
+end
+````
+
+We can also supply default values which will be returned if the property does not exist:
+````ruby
+class MyPage
+  include PageObject
+  
+  page_url "#{FigMagic.base_url("http://cheezyworld.com")}/my_page.html"
+end
+````
+
+If you have more complex data then you can utilize the `data_for` method that will return the data for a specific key.  The most common way to use this is to include the _FigMagic_ module in a [page-object](https://github.com/cheezy/page-object) and then populate a page with the data.  Here's an example:
 
 ````ruby
 class MyPage
@@ -120,15 +146,15 @@ FigMagic.add_translator MyData # this line must go in the same file as the modul
 
 ## Documentation
 
-The rdocs for this project can be found at [rubydoc.info](http://rubydoc.info/github/cheezy/fig_magic/master/frames).
+The rdocs for this project can be found at [rubydoc.info](http://rubydoc.info/github/tk8817/fig_magic/master/frames).
 
-To see the changes from release to release please look at the [ChangeLog](https://raw.github.com/cheezy/fig_magic/master/ChangeLog)
+To see the changes from release to release please look at the [ChangeLog](https://raw.github.com/tk8817/fig_magic/master/ChangeLog)
 
 
 
 ## Known Issues
 
-See [http://github.com/cheezy/fig_magic/issues](http://github.com/cheezy/fig_magic/issues)
+See [http://github.com/cheezy/fig_magic/issues](http://github.com/tk8817/fig_magic/issues)
 
 ## Contributing
 
@@ -142,4 +168,4 @@ Please ensure all contributions contain proper tests.
 
 ## Copyright
 
-Copyright (c) 2012-2013 Jeffrey S. Morgan. See LICENSE for details.
+Copyright (c) 2012-2013 Jeffrey S. Morgan & Justin Commu See LICENSE for details.
