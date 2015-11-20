@@ -5,8 +5,8 @@ Gem::Specification.new do |gem|
   gem.name          = "fig_magic"
   gem.version       = FigMagic::VERSION
   gem.platform      = Gem::Platform::RUBY
-  gem.authors       = ["Justin Commu"]
-  gem.email         = ["jcommu@gmail.com"]
+  gem.authors     = ["Justin Commmu", "Jeffrey S. Morgan"]
+  gem.email       = ["jcommu@gmail.com", "jeff.morgan@leandog.com"]
   gem.license       = 'MIT'
   gem.homepage      = "http://github.com/tk8817/fig_magic"
   gem.summary       = %q{Combines FigNewton & DataMagic into a single gem & namespace}
